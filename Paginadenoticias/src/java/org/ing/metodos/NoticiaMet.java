@@ -2,8 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itc.met;
-import org.itc.beans.Noticia;
+package org.ing.metodos;
+import org.ing.variables.Noticia;
 /**
  *
  * @author Israel

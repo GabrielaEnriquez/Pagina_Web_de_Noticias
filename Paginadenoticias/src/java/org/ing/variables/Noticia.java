@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.itc.beans;
+package org.ing.variables;
 import java.sql.Date;
 /**
  *
