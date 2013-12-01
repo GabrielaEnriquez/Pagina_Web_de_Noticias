@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui">  
+
+    <h:head>  
+
+    </h:head>  
+
+    <h:body>  
+
+        <h:form>  
+            <p:dataTable id="dataTable" var="cat" value="#{Categorias.listaCategorias}"
+                          paginator="true" rows="1"  
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="5,10,15">  
+              
+                <f:facet name="header">  
+                   Lista de categorias 
+                </f:facet>  
+                <p:column filterBy="idCategoria" sortBy="idCategoria" headerText="No de Categoria">  
+                    <h:outputText value="#{cat.idCategoria}" />  
+                </p:column>  
+
+                <p:column filterBy="nombreCat" sortBy="nombreCat" headerText="Nombre de Categoria">  
+                    <h:outputText value="#{cat.nombreCat}" />  
+                </p:column>  
+
+                
+            </p:dataTable>  
+        </h:form>
+
+    </h:body>  
+</html>  

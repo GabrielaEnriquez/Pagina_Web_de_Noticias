@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Categoria">
+
+    <delete id="eliminar" parameterType="String">
+        delete from "Categoria"
+        where "idCategoria"=#{idCategoria}
+    </delete>
+    
+    <update id="actualizar" parameterType="Categoria">
+        UPDATE "Categoria"
+        SET "nombreCat"=#{nombreCat}
+        WHERE "idCategoria"=#{idCategoria}
+    </update>
+    
+    <insert id="insertar" parameterType="Categoria"  keyProperty="idCategoria" >
+        insert into "Categoria" ("idCategoria","nombreCat")  values (#{idCategoria},#{nombreCat})
+    </insert>
+    <!--****************************************************************************************-->
+    <select id="buscarPorId" parameterType="int" resultType="Categoria">
+        select c.idCategoria,c.nombreCat from "Categoria" c where c.idCategoria=#{idCategoria}
+    </select>
+    
+    <select id="buscarTodos" resultType="Categoria" resultMap="resultado">
+        select c."idCategoria",c."nombreCat" from "Categoria" c     
+    </select>
+    
+     <resultMap type="Categoria" id="resultado"> 
+        <id column="idCategoria" property="idCategoria"></id>
+        <result column="nombreCat" property="nombreCat"></result>
+    </resultMap>
+    
+    
+    
+
+    
+</mapper>
